@@ -1,56 +1,76 @@
-#include <iostream>
-#include <vector>
-#include <stack>
+#include <bits/stdc++.h>
 using namespace std;
 
-void dfs(int node, const vector<vector<int>>& adj, vector<bool>& visited) {
-    stack<int> s;
-    s.push(node);
-    visited[node] = true;
+#define ll long long
+vector<ll > v[100001];
+ll visited[100001];
+/*
+solver : sam_in07
+date : 5/3/2025
+time : 11:18 pm
+topic : DFS
 
-    while (!s.empty()) {
-        int u = s.top();
-        s.pop();
+*/
 
+//void dfs(ll node, const vector<vector<ll>>& adj, vector<bool>& visited) {
+ //   stack<ll> s;
+//    s.push(node);
+ //   visited[node] = true;
 
-        for (int v : adj[u]) {
-            if (!visited[v]) {
-                visited[v] = true;
-                s.push(v);
-            }
-        }
+ //   while (!s.empty()) {
+  //      ll u = s.top();
+ //       s.pop();
+
+ //       for (ll v : adj[u]) {
+ //           if (!visited[v]) {
+  //              visited[v] = true;
+  //              s.push(v);
+   //         }
+  //      }
+   // }
+//}
+
+//easy way to imp dfs ...thats why i write this 
+
+void dfs(ll n)
+{
+    visited[n]=1;
+    for(auto child:v[n])
+    {
+        if(visited[child]==0)
+         dfs(child);
     }
 }
+
 
 int main() {
-    int n, e;
-    cin >> n >> e;
-
-
-    vector<vector<int>> adj(n + 1);
-
-
-
-    for (int i = 0; i < e; ++i) {
-        int u, v;
-        cin >> u >> v;
-        adj[u].push_back(v);
-        adj[v].push_back(u);
+  ll n,e , a,b , i , count=0;
+    cin>>n>>e;
+    for(i=0;i<e;i++)
+    {
+        cin>>a>>b;
+        v[a].push_back(b);
+        v[b].push_back(a);
     }
 
-    vector<bool> visited(n + 1, false);
-    int components = 0;
-
-
-    for (int i = 1; i <= n; ++i) {
-        if (!visited[i]) {
-
-            dfs(i, adj, visited);
-            components++;
-        }
+    for(i=1;i<=n;i++)
+    {
+        if(visited[i]==0)
+         dfs(i),count++;
     }
-
-    cout << components << endl;
-
+    cout<<count;
     return 0;
 }
+
+
+/*
+Sample Input
+8 5
+1 2
+2 3
+2 4
+3 5
+6 7
+
+Your Output
+3 */
