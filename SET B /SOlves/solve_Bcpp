@@ -1,0 +1,59 @@
+#include<bits/stdc++.h>
+using namespace std;
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;
+#define ll                 long long 
+#define maxi               1e17
+// #define MOD                1e9+7
+#define pie                3.14159265358979323846264338327
+
+#define mitsuha_wifu      ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
+#define kyouka_chan       freopen("input.txt", "r", stdin);freopen("output.txt", "w", stdout);
+#define sayonara          return 0 ;
+#define lancer_            ll testcase ;cin >> testcase ;while(testcase--) 
+
+/*
+solver : sam_in07
+date : 22/3/2025
+time : 17:48 pm
+topic : imp 
+
+*/
+void takumi_fujiwara() ;
+
+
+
+int main (){  
+   mitsuha_wifu ;
+ 
+    #ifndef  ONLINE_JUDGE
+       kyouka_chan ;
+    #endif 
+   
+lancer_   
+ {
+       takumi_fujiwara();
+}
+ return 0;
+}
+void takumi_fujiwara()   {
+ll i , n ,  mx = 0 , count = 0 , m , val , val1  ;  
+cin >> n >> m ;
+val = min(n , m ) ;
+val1 = max(n , m ) ;
+if(((n+m)%3==0)  and ((2*val) >= val1 )   ) {
+    cout << "YES\n";
+}
+
+// else if( (2*val) >= val1   )  {
+//     cout << "YES\n" ; 
+// }
+else {
+    cout << "NO\n" ; 
+}
+}
+
+
+
+
