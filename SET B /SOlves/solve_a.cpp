@@ -1,7 +1,13 @@
 #include<bits/stdc++.h>>
 using namespace std;
 #define ll long long 
+/*
+solver : sam_in07
+date : 12/3/2025
+time : 12:18 am
+topic : string 
 
+*/
 int main() {
     ll t1,tt=1;
     
